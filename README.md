@@ -15,7 +15,7 @@ conda env create sodre/ck || conda env update sodre/ck
 ## Usage
 Generate a new Cookiecutter template layout:
 ```bash
-cookiecutter gh:sodre/cookiecutter-github
+cookiecutter gh:nomr/cookiecutter-github
 ```
 
 ## Contributing
