@@ -1,8 +1,10 @@
 # cookiecutter-github
-
 A cookiecutter for github based projects
 
-## Requirements
+## Versioning
+This project adheres to [Semantic Versioning](http://semver.org/).
+
+## Installation
 Install or update your `cookiecutter` environment:
 ```bash
 conda env create sodre/ck || conda env update sodre/ck
@@ -10,10 +12,12 @@ conda env create sodre/ck || conda env update sodre/ck
 
 ## Usage
 Generate a new Cookiecutter template layout:
-```
+```bash
 cookiecutter gh:sodre/cookiecutter-github
 ```
 
+## Contributing
+We follow github flow.
+
 ## License
--------
 This project is licensed under the terms of the [MIT License](/LICENSE)

@@ -1,12 +1,15 @@
 {
+    "_extensions": ["jinja2_time.TimeExtension"],
     "full_name": "Your name",
     "email": "you@example.com",
-    "github_username": "{{ cookiecutter.email.split('@')[0]",
-    "github_org": "{{ cookiecutter.github_username }}",
+
     "project_name": "Name of the project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_short_description": "A short description of the project",
+
+    "github_username": "{{ cookiecutter.email.split('@')[0] }}",
+    "github_org": "{{ cookiecutter.github_username }}",
+
     "release_date": "{% now 'local' %}",
-    "version": "0.1.0",
-    "_extensions": ["jinja2_time.TimeExtension"]
+    "version": "0.1.0"
 }

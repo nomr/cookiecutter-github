@@ -64,4 +64,4 @@ def copy_hooks():
         )
 
 if __name__ == "__main__":
-    return 0
+    copy_hooks()
