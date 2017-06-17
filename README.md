@@ -1,16 +1,19 @@
-cookiecutter-github
-===================
+# cookiecutter-github
 
-A cookiecutter ffor github based projects
+A cookiecutter for github based projects
 
-Requirements
-------------
-Install `cookiecutter` command line: `pip install cookiecutter`    
+## Requirements
+Install or update your `cookiecutter` environment:
+```bash
+conda env create sodre/ck || conda env update sodre/ck
+```
 
-Usage
------
-Generate a new Cookiecutter template layout: `cookiecutter gh:sodre/cookiecutter-github`    
+## Usage
+Generate a new Cookiecutter template layout:
+```
+cookiecutter gh:sodre/cookiecutter-github
+```
 
-License
+## License
 -------
 This project is licensed under the terms of the [MIT License](/LICENSE)
