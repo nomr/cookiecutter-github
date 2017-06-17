@@ -1,5 +1,5 @@
 # cookiecutter-github
-
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)]()
 A cookiecutter for github based projects
 
 ## Versioning
