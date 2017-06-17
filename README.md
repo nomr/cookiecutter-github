@@ -19,5 +19,10 @@ cookiecutter gh:sodre/cookiecutter-github
 ## Contributing
 We follow github flow.
 
+### Continuous Testing
+```bash
+pytest --looponfail
+```
+
 ## License
 This project is licensed under the terms of the [MIT License](/LICENSE)
