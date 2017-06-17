@@ -1,0 +1,22 @@
+language: generic
+
+install:
+    - |
+      echo ""
+      echo "Installing a fresh version of Miniconda"
+      MINICONDA_URL="https://repo.continuum.io/miniconda"
+      MINICONDA_FILE="Miniconda-latest-Linux-x86_64.sh"
+      curl -L -O "${MINICONDA_URL}/${MINICONDA_FILE}"
+      bash $MINICONDA_FILE -b
+
+    - |
+      echo ""
+      echo "Installing cookiecutter environment"
+      export PATH=~/miniconda3/bin:$PATH
+      conda env create sodre/ck
+
+script:
+    - |
+      source activate ck
+      pytest
+
