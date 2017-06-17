@@ -1,4 +1,5 @@
 # cookiecutter-github
+
 A cookiecutter for github based projects
 
 ## Versioning
