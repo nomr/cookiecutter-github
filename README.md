@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## Installation
 Install or update your `cookiecutter` environment:
 ```bash
-conda env create sodre/ck || conda env update sodre/ck
+conda env create nomr/ck || conda env update nomr/ck
 ```
 
 ## Usage

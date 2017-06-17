@@ -18,10 +18,10 @@ install:
       echo "Installing cookiecutter environment"
       export PATH=~/miniconda3/bin:$PATH
       conda install -y anaconda-client
-      conda env create sodre/ck
+      conda env create nomr/ck-dev
 
 script:
     - |
-      source activate ck
+      source activate ck-dev
       pytest
 
