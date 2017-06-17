@@ -3,6 +3,8 @@ import os
 import re
 import shutil
 
+from git import Repo
+
 
 def fix_template_expansion(content, replacements):
     """
@@ -49,7 +51,7 @@ def copy_hooks():
 
             # project_name must be set after project_slug to prevent side
             # effects
-            {'project_name': '{{cookiecutter.project_slug}}'}
+            {'project_name': '{{cookiecutter.project_name}}'}
         ]
 
         if (not os.path.exists(hooksdir)):
@@ -63,5 +65,27 @@ def copy_hooks():
             ) + "\n"
         )
 
+
+def setup_git():
+    ''' Initializes the git repository.
+
+        It runs the equivalent of:
+            git init
+            git add .
+            git commit -m 'Initial Commit'
+            git tag -a VERSION
+            git branch ck/template
+    '''
+
+    r = Repo.init()
+    r.index.add(r.untracked_files)
+    commit = r.index.commit("Initial Commit")
+
+    tag = r.create_tag('{{cookiecutter.version}}')
+
+    ck_tmpl_branch = r.create_head('ck/template')
+
+
 if __name__ == "__main__":
     copy_hooks()
+    setup_git()
