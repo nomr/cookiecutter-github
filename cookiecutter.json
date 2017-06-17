@@ -1,8 +1,8 @@
 {
     "full_name": "Your name",
-    "email": "Your address email (eq. you@example.com)",
+    "email": "you@example.com",
     "github_username": "{{ cookiecutter.email.split('@')[0]",
-    "github_org": "{{ cookiecutter.github_org }}",
+    "github_org": "{{ cookiecutter.github_username }}",
     "project_name": "Name of the project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_short_description": "A short description of the project",

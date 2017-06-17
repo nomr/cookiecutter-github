@@ -35,27 +35,17 @@ def set_file_content(file, content):
     """
     return open(file, 'w').write(content)
 
-# format title of the generated readme file
-readme = os.getcwd() + '/README.md'
-if (os.path.exists(readme)):
-    title_underliner = ''.center(len('{{cookiecutter.project_slug}}'), '=')
-    set_file_content(
-        readme,
-        re.sub(
-            r'^=+$', title_underliner, get_file_content(readme), 1, flags=re.M
-        )
-    )
-# end format title of the generated readme file
 
-# issue #3 - copy post hook to project directory
-if (re.match(r'YES', '{{cookiecutter.copy_hooks}}', re.I)):
+def copy_hooks():
+    if (not re.match(r'YES', '{{cookiecutter.copy_hooks if cookiecutter.copy_hooks is defined else "no"}}', re.I)):
+        return
     if (re.match(r'^cookiecutter\-', '{{cookiecutter.project_slug}}')):
         hooksdir = os.getcwd() + '/hooks'
         posthook = hooksdir + '/post_gen_project.py'
         source = os.path.realpath(__file__)
         replacements = [
             {'project_slug': '{{cookiecutter.project_slug}}'},
-            {'copy_hooks': '{{cookiecutter.copy_hooks}}'},
+            {'copy_hooks': '{{cookiecutter.copy_hooks if cookiecutter.copy_hooks is defined else "no"}}'},
 
             # project_name must be set after project_slug to prevent side
             # effects
@@ -72,5 +62,6 @@ if (re.match(r'YES', '{{cookiecutter.copy_hooks}}', re.I)):
                 get_file_content(posthook), replacements
             ) + "\n"
         )
-# end issue #3
 
+if __name__ == "__main__":
+    return 0
